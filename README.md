@@ -1,122 +1,153 @@
-# PyTorch Healthcare Deep Learning Labs
+# PyTorch Healthcare DNN Labs
 
-A beginner-friendly PyTorch repository containing tensor basics, neural-network fundamentals, and healthcare-focused DNN notebooks.
+This repository contains beginner-friendly PyTorch notebooks for learning tensor operations, neural network basics, and deep learning applications in healthcare prediction tasks.
 
-## Project overview
+The project is organized as a small learning portfolio. It includes basic PyTorch tensor practice, loss functions, simple neural network concepts, mortality prediction using diagnosis codes, and heart failure prediction using a deep neural network.
 
-This repo is organized as a small learning portfolio:
+---
 
-1. **PyTorch Tensor Basics** — tensor creation, indexing, slicing, reshaping, and math operations.
-2. **PyTorch Basics: Tensors, Losses, and Training** — activation functions, gradients, loss functions, and a simple training loop.
-3. **Mortality Prediction with a DNN** — diagnosis-code based mortality prediction using a neural network.
-4. **Heart Failure Prediction with a DNN** — binary classification for heart-failure prediction using SVMlight data.
+## Repository Contents
 
-> Important: the healthcare notebooks require datasets that are **not included**. Do not upload private, restricted, or licensed medical data to GitHub unless you have permission.
+| File | Description |
+|---|---|
+| `01_pytorch_tensor_basics.ipynb` | Introduction to PyTorch tensors and basic tensor operations. |
+| `02_pytorch_basics_tensors_loss.ipynb` | PyTorch basics including tensors, loss functions, and simple neural network building blocks. |
+| `03_mortality_prediction_dnn.ipynb` | Deep neural network model for mortality prediction using diagnosis-code based healthcare data. |
+| `04_heart_failure_prediction_dnn.ipynb` | Deep neural network model for heart failure prediction. |
+| `requirements.txt` | Python packages required to run the notebooks. |
+| `.gitignore` | Prevents unnecessary files, cache files, and private data files from being uploaded. |
+| `LICENSE` | License information for this repository. |
 
-## Repository structure
+---
 
-```text
-pytorch-healthcare-dnn-labs/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── LICENSE
-├── notebooks/
-│   ├── 01_pytorch_tensor_basics.ipynb
-│   ├── 02_pytorch_basics_tensors_loss.ipynb
-│   ├── 03_mortality_prediction_dnn.ipynb
-│   └── 04_heart_failure_prediction_dnn.ipynb
-├── src/
-│   └── utils.py
-├── data/
-│   ├── README.md
-│   ├── hw2/
-│   │   └── .gitkeep
-│   └── lab2/
-│       └── .gitkeep
-└── outputs/
-    └── .gitkeep
-```
+## Project Goals
 
-## Setup
+The goals of this project are to:
 
-### Option 1: local Python environment
+- Practice PyTorch tensor operations.
+- Understand how loss functions are used in neural network training.
+- Build beginner-level deep neural networks using PyTorch.
+- Apply deep learning concepts to healthcare prediction problems.
+- Organize machine learning notebooks into a clean GitHub portfolio project.
+
+---
+
+## Topics Covered
+
+- PyTorch tensors
+- Tensor indexing and reshaping
+- Loss functions
+- Neural network layers
+- Model training loops
+- Binary classification
+- Healthcare prediction tasks
+- Mortality prediction
+- Heart failure prediction
+- Deep neural networks
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/pytorch-healthcare-dnn-labs.git
-cd pytorch-healthcare-dnn-labs
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME.git
+cd YOUR-REPOSITORY-NAME
+```
 
-python -m venv .venv
-source .venv/bin/activate      # macOS/Linux
-# .venv\Scripts\activate     # Windows
+Replace `YOUR-USERNAME` and `YOUR-REPOSITORY-NAME` with your actual GitHub username and repository name.
 
+### 2. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate the environment:
+
+For Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+For macOS/Linux:
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
+
+### 4. Open the notebooks
+
+```bash
 jupyter notebook
 ```
 
-### Option 2: Google Colab
+Then open the notebooks one by one in this order:
 
-1. Open a notebook from the `notebooks/` folder.
-2. Upload the required data files manually.
-3. Adjust `DATA_PATH` inside the notebook if needed.
+1. `01_pytorch_tensor_basics.ipynb`
+2. `02_pytorch_basics_tensors_loss.ipynb`
+3. `03_mortality_prediction_dnn.ipynb`
+4. `04_heart_failure_prediction_dnn.ipynb`
 
-## Data setup
+---
 
-### Heart failure notebook
+## Dataset Notice
 
-Expected folder:
+The healthcare notebooks may require external datasets that are not included in this repository.
 
-```text
-data/hw2/
-```
+Because healthcare datasets can contain sensitive or restricted information, this repository does **not** include private medical data.
 
-Expected files:
+Before running the prediction notebooks, make sure you have permission to use the required dataset files and place them in the correct local folder expected by the notebook.
 
-```text
-features_svmlight.train
-features_svmlight.val
-features_svmlight.test
-```
+Do not upload private, restricted, or patient-level medical data to GitHub.
 
-### Mortality prediction notebook
+---
 
-Expected folder:
+## How to Use This Repository
 
-```text
-data/lab2/
-```
+This repository is best used as a learning project. Start with the PyTorch basics notebooks, then move to the healthcare prediction notebooks.
 
-Expected files depend on the original assignment dataset, commonly including CSV files such as:
+Recommended order:
 
-```text
-PATIENTS.csv
-ADMISSIONS.csv
-DIAGNOSES_ICD.csv
-```
+1. Learn tensor operations.
+2. Understand loss functions.
+3. Study how neural networks are built in PyTorch.
+4. Train and evaluate healthcare prediction models.
+5. Improve the notebooks by adding more explanation, visualizations, and model evaluation metrics.
 
-Because healthcare datasets can be sensitive or licensed, the repository includes only placeholder folders.
+---
 
-## What was cleaned for GitHub
+## Possible Improvements
 
-- Notebook outputs were cleared to reduce file size.
-- File names were renamed to GitHub-friendly names.
-- `TODO`, `pass`, and `raise NotImplementedError` placeholders were cleaned where possible.
-- Dataset paths were changed to use the local `data/` folder.
-- A reusable `src/utils.py` file was added for SVMlight loading.
-- `.gitignore` was added to avoid uploading virtual environments, cache files, and private datasets.
+Future improvements can include:
 
-## Suggested next improvements
+- Add more markdown explanation before each code section.
+- Add model evaluation metrics such as accuracy, precision, recall, F1-score, and ROC-AUC.
+- Add training and validation loss plots.
+- Add confusion matrix visualizations.
+- Move reusable code into Python scripts.
+- Add sample synthetic data so the notebooks can run without private datasets.
+- Add a `notebooks/` folder to keep the repository more organized.
+- Add screenshots of results to the README.
 
-- Add more markdown explanation before each model-training section.
-- Add screenshots or result summaries after you run the notebooks with permitted data.
-- Add a short project diagram to the README.
-- Add model evaluation notes comparing accuracy, AUC, precision, recall, and F1.
-- Add a `notebooks/README.md` if the repo grows.
+---
 
-## Academic/source note
+## Important Disclaimer
 
-If these notebooks are based on course materials or IBM/Coursera lab notebooks, check the license and your course policy before publishing. Add proper credit where required.
+This project is for educational purposes only. The models in this repository are not intended for clinical decision-making or real-world medical diagnosis.
 
-## License
+Healthcare machine learning models should be validated carefully and reviewed by qualified professionals before any real-world use.
 
-This starter repo includes an MIT license for your original additions. Only keep the license if you have the right to publish the notebook content.
+---
+
+## Author
+
+Created by **Nobel789** as a PyTorch and healthcare deep learning learning project.
